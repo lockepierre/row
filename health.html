@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#050506">
 <meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Dashboard">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icon-512.svg">
 <title>Daily Stack — Customizable Template</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="sync.js" defer></script>
@@ -87,16 +92,17 @@ main {
 .water-iframe {
   display: block;
   width: 100%;
-  height: 880px;
+  min-height: 880px;
+  height: auto;
   border: 0;
   background: transparent;
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   color-scheme: dark;
 }
 @media (max-width: 480px) {
   .water-embed { margin-top: 40px; }
-  .water-iframe { height: 780px; }
+  .water-iframe { min-height: 780px; }
 }
 
 .stack-card {
@@ -823,7 +829,13 @@ main {
         const now = new Date();
         $('whUpdated').textContent = 'Updated ' + now.toLocaleTimeString(undefined, { hour:'numeric', minute:'2-digit' });
       } catch (e) {
-        showErr(e.message || String(e));
+        if (e.message && e.message.indexOf('unauthorized') !== -1) {
+          wipe();
+          render();
+          showErr('Session expired — reconnect your WHOOP.');
+        } else {
+          showErr(e.message || String(e));
+        }
       }
     }
 
