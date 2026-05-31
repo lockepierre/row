@@ -531,7 +531,7 @@ main {
   (function () {
     const KEY = 'whoop_tokens_v1';
     const CLIENT_ID = 'af47d067-93b9-4f7d-aa23-e8306fbb6875';
-    const REDIRECT  = window.location.origin + '/api/whoop-callback';
+    const REDIRECT  = 'https://row-pink.vercel.app/api/whoop-callback';
     const SCOPES    = 'read:recovery read:sleep read:workout read:cycles read:profile read:body_measurement offline';
     function loadTokens() { try { return JSON.parse(localStorage.getItem(KEY)); } catch { return null; } }
     function saveTokens(t) { try { localStorage.setItem(KEY, JSON.stringify(t)); } catch {} }
