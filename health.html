@@ -917,14 +917,13 @@ main {
   const TEMPLATE_VERSION = 5;
 
   const STACK_DEFAULTS = [
-    { id: 'm1', name: 'XXXXX - Supplement of choice', dose: '', window: 'morning', note: 'how much MG, meal times, any data below', tag: null,    ordered: true  },
-    { id: 'm2', name: 'XXXXX - Supplement of choice', dose: '', window: 'morning', note: 'how much MG, meal times, any data below', tag: 'stack', ordered: true  },
-    { id: 'm3', name: 'XXXXX - Supplement of choice', dose: '', window: 'morning', note: 'how much MG, meal times, any data below', tag: null,    ordered: true  },
-    { id: 'l1', name: 'XXXXX - Supplement of choice', dose: '', window: 'lunch',   note: 'how much MG, meal times, any data below', tag: null,    ordered: true  },
-    { id: 'l2', name: 'XXXXX - Supplement of choice', dose: '', window: 'lunch',   note: 'how much MG, meal times, any data below', tag: null,    ordered: true  },
-    { id: 'e1', name: 'XXXXX - Supplement of choice', dose: '', window: 'evening', note: 'how much MG, meal times, any data below', tag: null,    ordered: true  },
-    { id: 'e2', name: 'XXXXX - Supplement of choice', dose: '', window: 'evening', note: 'how much MG, meal times, any data below', tag: 'not-ordered', ordered: false },
-    { id: 'e3', name: 'XXXXX - Supplement of choice', dose: '', window: 'evening', note: 'how much MG, meal times, any data below', tag: null,    ordered: true  },
+    { id: 'm1', name: 'Creatin',           dose: '5g',        window: 'morning', note: 'Täglich, Zeitpunkt egal — Pulver in Wasser auflösen',          tag: null, ordered: true  },
+    { id: 'm2', name: 'Vitamin D3 + K2',   dose: '2000 IE',   window: 'morning', note: 'Mit fetthaltiger Mahlzeit nehmen für bessere Aufnahme',         tag: null, ordered: true  },
+    { id: 'm3', name: 'Omega-3',           dose: '2g EPA+DHA', window: 'morning', note: 'Mit Mahlzeit nehmen, reduziert Entzündungen und hilft Haut',   tag: null, ordered: true  },
+    { id: 'm4', name: 'Daily (Multi)',     dose: '1 Kapsel',  window: 'morning', note: 'Multivitamin, mit Frühstück',                                   tag: null, ordered: true  },
+    { id: 'e1', name: 'Magnesium',         dose: '300–400mg', window: 'evening', note: 'Vor dem Schlafen — verbessert Schlaftiefe und Regeneration',    tag: null, ordered: true  },
+    { id: 'e2', name: 'Zinc',             dose: '15–25mg',   window: 'evening', note: 'Auf nüchternen Magen oder vor Schlaf',                          tag: null, ordered: true  },
+    { id: 'e3', name: 'Ashwa+',           dose: '300–600mg', window: 'evening', note: 'Ashwagandha abends — reduziert Cortisol, verbessert Schlaf',    tag: null, ordered: true  },
   ];
 
   const STACK_WINDOWS = [
