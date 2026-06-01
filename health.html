@@ -827,7 +827,7 @@ main {
         }
 
         const now = new Date();
-        $('whUpdated').textContent = 'Updated ' + now.toLocaleTimeString(undefined, { hour:'numeric', minute:'2-digit' });
+        $('whUpdated').textContent = 'Updated ' + now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', hour12: false });
       } catch (e) {
         if (e.message && e.message.indexOf('unauthorized') !== -1) {
           wipe();

@@ -705,8 +705,8 @@ body::after {
   // Paste your Anthropic key here to enable ✨ Polish. Empty = falls back to plain add.
   const ANTHROPIC_API_KEY = '';
 
-  const WAKE_HOUR  = 8;
-  const SLEEP_HOUR = 24;
+  const WAKE_HOUR  = 6;
+  const SLEEP_HOUR = 21.5; // 21:30
 
   // ---------- storage helpers ----------
   function storeGet(key) {
@@ -906,12 +906,7 @@ body::after {
   function rgb(c) { return 'rgb(' + Math.round(c[0]) + ',' + Math.round(c[1]) + ',' + Math.round(c[2]) + ')'; }
 
   function formatClock(d) {
-    let h = d.getHours();
-    const m = d.getMinutes();
-    const ampm = h >= 12 ? 'PM' : 'AM';
-    h = h % 12;
-    if (h === 0) h = 12;
-    return h + ':' + pad2(m) + ' ' + ampm;
+    return pad2(d.getHours()) + ':' + pad2(d.getMinutes());
   }
   function formatRemaining(totalMin) {
     const h = Math.floor(totalMin / 60);
