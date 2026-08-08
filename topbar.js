@@ -122,8 +122,9 @@ body.has-bottombar {
   .bottombar-tab { font-size: 10px; }
 }
 html, body { -webkit-text-size-adjust: 100%; }
+html, body { overscroll-behavior-x: none; }
+html { touch-action: pan-y; }
 @media (max-width: 768px) {
-  html { touch-action: pan-y; }
   ::-webkit-scrollbar { width: 0; height: 0; display: none; }
   html, body { scrollbar-width: none; -ms-overflow-style: none; }
 }

@@ -2121,7 +2121,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     const yesterday = today - 86400000;
     const dayStart = new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
     if (dayStart === today) {
-      return d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+      return d.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', hour12: false });
     }
     if (dayStart === yesterday) return 'yest';
     const mons = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
